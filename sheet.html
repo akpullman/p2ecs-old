@@ -1,4 +1,102 @@
-	<div>
-		<input name="attr_character_name" type="text"/>
-		<label>Character<br />Name</label>
+<div class="view">
+	<input type="hidden" class="controller" name="attr_current_page" value="current_page" ></span>
+	<div class="menu">
+		<div class="menu-item menu-item-1">
+			<h1><button type="action" name="act_1">Page 1</button></h1>
+		</div>
+		<div class="menu-item menu-item-2">
+			<h1><button type="action" name="act_2">Page 2</button></h1>
+		</div>
+		<div class="menu-item menu-item-3">
+			<h1><button type="action" name="act_3">Page 3</button></h1>
+		</div>
+		<div class="menu-item menu-item-4">
+			<h1><button type="action" name="act_4">Page 4</button></h1>
+		</div>
 	</div>
+	<div class="folio">
+		<div class="page page-1">
+			<div class="row row-1">
+				<div class="section section-0">
+					<div class="logo">
+						<img alt="Pathfinder Second Edition Logo" src="https://s3.amazonaws.com/files.d20.io/images/81978424/gPz-jgjL0kKUDQEXUWvgmQ/med.png?1558470838" />
+						<h1>Character<br />Sheet</h1>
+					</div>
+					<div class="proficiency">
+						<h3>PROFICIENCY</h3>
+						<ul>
+							<li>Untrained +0</li>
+							<li>Trained 2+Level</li>
+							<li>Expert 4+Level</li>
+							<li>Master 6+Level</li>
+							<li>Legendary 8+Level</li>
+						</ul>
+					</div>
+					<div class="actions">
+						<h3>ACTIONS</h3>
+						<ul>
+							<li><img alt="[F]" src="https://s3.amazonaws.com/files.d20.io/images/86669371/Okaql7KOw8yQ0Hxi5xixIw/med.png"/>Action, Free</li>
+							<li><img alt="[1]" src="https://s3.amazonaws.com/files.d20.io/images/86669372/Pcb4lIrqUua7EyhBvSJzDw/med.png"/>Action, Single</li>
+							<li><img alt="[2]" src="https://s3.amazonaws.com/files.d20.io/images/86669374/AmE-4W6wYgfp4NUH0BqteA/med.png"/>Activity, Two-Act.</li>
+							<li><img alt="[3]" src="https://s3.amazonaws.com/files.d20.io/images/86669373/Dt8Pyerm-x0Zz8cfyaikvA/med.png"/>Activity, Three-Act.</li>
+							<li><img alt="[R]" src="https://s3.amazonaws.com/files.d20.io/images/86669375/JsOMH8MaMX_8pT0ZYFeSQg/med.png"/>Reaction</li>
+						</ul>
+					</div>
+				</div>
+				<div class="section section-1">
+					<div class="field character-name">
+						<div>
+							<textarea name="attr_character_name"></textarea>
+							<label>Character<br />Name</label>
+						</div>
+					</div>
+					<div class="field player-name">
+						<div>
+							<textarea name="attr_player_name"></textarea>
+							<label>Player<br />Name</label>
+						</div>
+					</div>
+					<div class="field experience-points">
+						<div>
+							<textarea name="attr_experience_points"></textarea>
+							<label>Experience<br />Points (XP)</label>
+						</div>
+					</div>
+				</div>
+				<div class="section section-2">
+					section 2
+				</div>
+				<div class="section section-3">
+					section 3
+				</div>
+			</div>
+			<div class="row row-2">
+				row2
+			</div>
+			<div class="row row-3">
+				row3
+			</div>
+		</div>
+		<div class="page page-2">
+			page 2 content
+		</div>
+		<div class="page page-3">
+			page 3 content
+		</div>
+		<div class="page page-4">
+			page 4 content
+		</div>
+	</div>
+</div>
+
+<script type="text/worker">
+    const menu_items = [ "1", "2", "3", "4" ];
+	
+    menu_items.forEach(menu_item => {
+        on(`clicked:${menu_item}`, function() {
+            setAttrs({
+                current_page: menu_item
+            });
+        });
+    });
+</script>

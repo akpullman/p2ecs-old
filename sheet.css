@@ -1,0 +1,325 @@
+/*Global*/
+@import url('https://fonts.googleapis.com/css?family=Aclonica&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+}
+
+div {
+	position: relative;
+	display: block;
+}
+
+button {
+	display: block;
+	background: none;
+	outline: none;
+}
+
+h1, h2 {
+	font-family: 'Aclonica', sans-serif;
+	font-size: 2.5em;
+	line-height: 1em;
+	color: #5e0000;
+	font-variant: small-caps;
+	text-shadow: 
+		0 0 .2em #f3d09c,
+		0 0 .2em #f3d09c;
+		font-weight: 900;
+	letter-spacing: .05em;
+}
+
+label {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	line-height: 1em;
+	letter-spacing: .1em;
+	color: #002664;
+	font-family: 'Aclonica', sans-serif;
+	font-variant: small-caps;
+	width: auto;
+	font-size: inherit;
+}
+
+/*general*/
+/*pages*/
+.sheet-page {
+	transform: scale(0);
+	grid-area: folio-pages;
+	display: grid;
+	//transition: 1s;
+	background: grey;
+	margin: 1.5em;
+	margin-bottom: 2em;
+	position: relative;
+	z-index: 1;
+}
+
+.sheet-page:after {
+	content: "Permission granted to photocopy for personal use only.";
+	position: absolute;
+	top: 100%;
+	right: 0;
+	font-weight: 700;
+}
+
+.sheet-controller[value="1"] ~ .sheet-folio .sheet-page-1,
+.sheet-controller[value="2"] ~ .sheet-folio .sheet-page-2,
+.sheet-controller[value="3"] ~ .sheet-folio .sheet-page-3,
+.sheet-controller[value="4"] ~ .sheet-folio .sheet-page-4 {
+	transform: none;
+}
+
+/*rows*/
+.sheet-row {
+	background: grey;
+}
+
+/*sections*/
+.sheet-section {
+	background: grey;
+	flex: 1;
+	display: grid;
+	margin: .25em;
+}
+
+/*fields*/
+.sheet-field{
+	padding: .5em;
+	background: white;
+	border: 5px solid black;
+	overflow: hidden;
+	resize: both;
+	border: 2px solid #5e0000;
+}
+
+.sheet-field .sheet-contents {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 1em;
+	padding-left: 4em;
+}
+
+.sheet-field label {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.sheet-field textarea {
+	height: 100%;
+	background: none;
+	resize: none;
+	white-space:pre;
+	font-size: 2em;
+	line-height: 1em;
+}
+
+.sheet-field textarea:hover {
+	background: #F7F7F7;
+}
+
+.sheet-field textarea:focus {
+	background: #F0F0F0;
+}
+
+.sheet-field textarea:active {
+	background: #E0E0E0;
+}
+
+.sheet-field .sheet-inline {
+	padding: 0;
+	padding-left: 8em;
+}
+
+/*components*/
+/*view*/
+.sheet-view {
+	border: 1px solid black;
+	color: #002664;
+	display: grid;
+	font-size: 1rem;
+	line-height: 1.2em;
+	grid: auto 1fr / auto;
+	z-index: 0;
+}
+
+/*menu*/
+.sheet-menu {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: .5em;
+}
+
+.sheet-menu-item {
+	flex: 0;
+	padding: .5em;
+	white-space: nowrap;
+}
+
+.sheet-menu-item h1 {
+	font-variant: small-caps;
+	background: #002664;
+	color: white;
+}
+
+.sheet-menu-item button {
+	border: .5em outset #8093B2;
+	padding: .5em;
+	color: grey;
+}
+ 
+.sheet-menu-item button:hover {
+	border-style: ridge;
+}
+ 
+.sheet-menu-item button:active {
+	border-style: inset;
+}
+
+.sheet-controller[value="1"] ~ .sheet-menu .sheet-menu-item-1 button,
+.sheet-controller[value="2"] ~ .sheet-menu .sheet-menu-item-2 button,
+.sheet-controller[value="3"] ~ .sheet-menu .sheet-menu-item-3 button,
+.sheet-controller[value="4"] ~ .sheet-menu .sheet-menu-item-4 button {
+	border-style: inset;
+	color: white;
+}
+
+/*folio*/
+.sheet-folio {
+	position: relative;
+	display: grid;
+	grid: auto / auto;
+	grid-template-areas:
+		"folio-pages";
+	background: #d9d1c4;
+}
+
+/*page 1*/
+.sheet-page-1 {
+	grid: auto auto auto / auto;
+	grid-template-areas:
+		"row1"
+		"row2"
+		"row3";
+	background: none;
+}
+
+.sheet-page-1 .sheet-row-1 {
+	grid-area: row1;
+	display: flex;
+	flex-flow: row wrap;
+	background: none;
+}
+
+/*Section 0*/
+.sheet-section-0{
+	grid: auto auto / auto auto;
+	gap: .25em;
+	grid-template-areas:
+		"logo logo"
+		"proficiency actions";
+}
+
+.sheet-section-0 h3{
+	text-decoration: underline;
+}
+
+.sheet-section-0 ul {
+	list-style: none;
+}
+
+.sheet-section-0 li {
+	white-space: pre;
+}
+
+.sheet-logo {
+	grid-area: logo;
+	text-align: center;
+	margin-left: -1em;
+	margin-top: -.25em;
+}
+
+.sheet-logo img{
+	margin: -.75em;
+	height: 5em;
+}
+
+.sheet-proficiency {
+	grid-area: proficiency;
+}
+
+.sheet-actions {
+	grid-area: actions;
+}
+
+.sheet-actions img{
+	height: 1em;
+	vertical-align: middle;
+	filter: invert(87%) sepia(57%) saturate(3326%) hue-rotate(208deg) brightness(83%) contrast(105%);
+	margin-right: .2em;
+}
+
+/*Section 1*/
+.sheet-section-1 {
+	display: grid;
+	grid: auto auto auto / auto;
+	grid-template-areas:
+		"character-name"
+		"player-name"
+		"experience-points";
+	gap: .25em;
+	background: none;
+}
+
+.sheet-character-name {
+	grid-area: character-name;
+}
+
+.sheet-player-name {
+	grid-area: player-name;
+}
+
+.sheet-experience-points {
+	grid-area: experience-points;
+	resize: none;
+}
+
+.sheet-experience-points div {
+	display: grid;
+	grid: auto / auto 1fr;
+	gap: .5em;
+	grid-template-areas:
+		"label textarea";
+		height: 100%;
+}
+
+.sheet-experience-points label {
+	position: relative;
+	grid-area: label;
+	place-self: center right;
+}
+
+.sheet-experience-points textarea {
+	grid-area: textarea;
+	height: 1.1em;
+	place-self: center left;
+}
+
+/*row2*/
+.sheet-page-1 .sheet-row-2 {
+	grid-area: row2;
+}
+.sheet-page-1 .sheet-row-3 {
+	grid-area: row3;
+}
