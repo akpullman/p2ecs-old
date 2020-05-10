@@ -49,7 +49,80 @@ label {
 	font-size: inherit;
 }
 
-/*general*/
+/*charactersheet*/
+.charsheet {
+	border: 10px solid red;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: -10px;
+}
+
+/*view*/
+.sheet-view {
+	border: 1px solid black;
+	color: #002664;
+	display: grid;
+	font-size: 1rem;
+	line-height: 1.2em;
+	grid: auto 1fr / auto;
+	z-index: 0;
+	height: 100%;
+	width: 100%;
+}
+
+/*menu*/
+.sheet-menu {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: .5em;
+}
+
+.sheet-menu-item {
+	flex: 0;
+	padding: .5em;
+	white-space: nowrap;
+}
+
+.sheet-menu-item h1 {
+	font-variant: small-caps;
+	background: #002664;
+	color: white;
+}
+
+.sheet-menu-item button {
+	border: .5em outset #8093B2;
+	padding: .5em;
+	color: grey;
+}
+ 
+.sheet-menu-item button:hover {
+	border-style: ridge;
+}
+ 
+.sheet-menu-item button:active {
+	border-style: inset;
+}
+
+.sheet-controller[value="1"] ~ .sheet-menu .sheet-menu-item-1 button,
+.sheet-controller[value="2"] ~ .sheet-menu .sheet-menu-item-2 button,
+.sheet-controller[value="3"] ~ .sheet-menu .sheet-menu-item-3 button,
+.sheet-controller[value="4"] ~ .sheet-menu .sheet-menu-item-4 button {
+	border-style: inset;
+	color: white;
+}
+
+/*folio*/
+.sheet-folio {
+	position: relative;
+	display: grid;
+	grid: auto / auto;
+	grid-template-areas:
+		"folio-pages";
+	background: #d9d1c4;
+}
+
 /*pages*/
 .sheet-page {
 	transform: scale(0);
@@ -139,70 +212,6 @@ label {
 .sheet-field .sheet-inline {
 	padding: 0;
 	padding-left: 8em;
-}
-
-/*components*/
-/*view*/
-.sheet-view {
-	border: 1px solid black;
-	color: #002664;
-	display: grid;
-	font-size: 1rem;
-	line-height: 1.2em;
-	grid: auto 1fr / auto;
-	z-index: 0;
-}
-
-/*menu*/
-.sheet-menu {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	padding: .5em;
-}
-
-.sheet-menu-item {
-	flex: 0;
-	padding: .5em;
-	white-space: nowrap;
-}
-
-.sheet-menu-item h1 {
-	font-variant: small-caps;
-	background: #002664;
-	color: white;
-}
-
-.sheet-menu-item button {
-	border: .5em outset #8093B2;
-	padding: .5em;
-	color: grey;
-}
- 
-.sheet-menu-item button:hover {
-	border-style: ridge;
-}
- 
-.sheet-menu-item button:active {
-	border-style: inset;
-}
-
-.sheet-controller[value="1"] ~ .sheet-menu .sheet-menu-item-1 button,
-.sheet-controller[value="2"] ~ .sheet-menu .sheet-menu-item-2 button,
-.sheet-controller[value="3"] ~ .sheet-menu .sheet-menu-item-3 button,
-.sheet-controller[value="4"] ~ .sheet-menu .sheet-menu-item-4 button {
-	border-style: inset;
-	color: white;
-}
-
-/*folio*/
-.sheet-folio {
-	position: relative;
-	display: grid;
-	grid: auto / auto;
-	grid-template-areas:
-		"folio-pages";
-	background: #d9d1c4;
 }
 
 /*page 1*/
