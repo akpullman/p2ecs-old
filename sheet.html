@@ -1,102 +1,386 @@
-<div class="view">
-	<input type="hidden" class="controller" name="attr_current_page" value="current_page" ></span>
-	<div class="menu">
-		<div class="menu-item menu-item-1">
-			<h1><button type="action" name="act_1">Page 1</button></h1>
-		</div>
-		<div class="menu-item menu-item-2">
-			<h1><button type="action" name="act_2">Page 2</button></h1>
-		</div>
-		<div class="menu-item menu-item-3">
-			<h1><button type="action" name="act_3">Page 3</button></h1>
-		</div>
-		<div class="menu-item menu-item-4">
-			<h1><button type="action" name="act_4">Page 4</button></h1>
-		</div>
+<!-- controllers -->
+<input type="hidden" value="1" name="attr_current_page" class="current-page" />
+<input type="hidden" value="0" name="attr_strength_score" />
+<input type="hidden" value="0" name="attr_strength_modifier" />
+
+<!-- view -->
+<div class="view min-phone max-paper">
+	<div class="tabs">
+		<label title="Page 1" class="tab 1">
+			<input type="radio" name="attr_current_page" value="1"/>
+			<span>Page 1</span>
+		</label>
+		<label title="Page 2" class="tab 2">
+			<input type="radio" name="attr_current_page" value="2"/>
+			<span>Page 2</span>
+		</label>
+		<label title="Page 3" class="tab 3">
+			<input type="radio" name="attr_current_page" value="3"/>
+			<span>Page 3</span>
+		</label>
+		<label title="Page 4" class="tab 4">
+			<input type="radio" name="attr_current_page" value="4"/>
+			<span>Page 4</span>
+		</label>
 	</div>
 	<div class="folio">
-		<div class="page page-1">
-			<div class="row row-1">
-				<div class="section section-0">
+		<div class="page 1">
+			<div class="row 1">
+				<div class="section 0 compact">
 					<div class="logo">
-						<img alt="Pathfinder Second Edition Logo" src="https://s3.amazonaws.com/files.d20.io/images/81978424/gPz-jgjL0kKUDQEXUWvgmQ/med.png?1558470838" />
-						<h1>Character<br />Sheet</h1>
+						logo
 					</div>
-					<div class="proficiency">
-						<h3>PROFICIENCY</h3>
-						<ul>
-							<li>Untrained +0</li>
-							<li>Trained 2+Level</li>
-							<li>Expert 4+Level</li>
-							<li>Master 6+Level</li>
-							<li>Legendary 8+Level</li>
-						</ul>
+					<div class="proficiencies">
+						proficiencies
 					</div>
 					<div class="actions">
-						<h3>ACTIONS</h3>
-						<ul>
-							<li><img alt="[F]" src="https://s3.amazonaws.com/files.d20.io/images/86669371/Okaql7KOw8yQ0Hxi5xixIw/med.png"/>Action, Free</li>
-							<li><img alt="[1]" src="https://s3.amazonaws.com/files.d20.io/images/86669372/Pcb4lIrqUua7EyhBvSJzDw/med.png"/>Action, Single</li>
-							<li><img alt="[2]" src="https://s3.amazonaws.com/files.d20.io/images/86669374/AmE-4W6wYgfp4NUH0BqteA/med.png"/>Activity, Two-Act.</li>
-							<li><img alt="[3]" src="https://s3.amazonaws.com/files.d20.io/images/86669373/Dt8Pyerm-x0Zz8cfyaikvA/med.png"/>Activity, Three-Act.</li>
-							<li><img alt="[R]" src="https://s3.amazonaws.com/files.d20.io/images/86669375/JsOMH8MaMX_8pT0ZYFeSQg/med.png"/>Reaction</li>
-						</ul>
+						actions
 					</div>
 				</div>
-				<div class="section section-1">
-					<div class="field character-name">
-						<div>
-							<textarea name="attr_character_name"></textarea>
-							<label>Character<br />Name</label>
+				<div class="section 1">
+					<div class="character-name">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_character_name"></textarea>
+								<span class="label">Character<br />Name</span>
+							</div>
+						</label>
+					</div>
+					<div class="player-name">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_player_name"></textarea>
+								<span class="label">Player<br />Name</span>
+							</div>
+						</label>
+					</div>
+					<div class="experience-points">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_experience_points"></textarea>
+								<span class="label">Experience<br />Points (XP)</span>
+							</div>
+						</label>
+					</div>
+				</div>
+				<div class="section 2">
+					<div class="ancestry-and-heritage">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_ancestry_and_heritage"></textarea>
+								<span class="label">Ancestry and Heritage</span>
+							</div>
+						</label>
+					</div>
+					<div class="background">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_background"></textarea>
+								<span class="label">Background</span>
+							</div>
+						</label>
+					</div>
+					<div class="class">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_class"></textarea>
+								<span class="label">Class</span>
+							</div>
+						</label>
+					</div>
+					<div class="size-alignment-traits">
+						<div class="size">
+							<label class="field">
+								<div class="contents">
+									<textarea name="attr_size"></textarea>
+									<span class="label">Size</span>
+								</div>
+							</label>
+						</div>
+						<div class="alignment">
+							<label class="field">
+								<div class="contents">
+									<textarea name="attr_alignment"></textarea>
+									<span class="label">Alignment</span>
+								</div>
+							</label>
+						</div>
+						<div class="traits">
+							<label class="field">
+								<div class="contents">
+									<textarea name="attr_traits"></textarea>
+									<span class="label">Traits</span>
+								</div>
+							</label>
 						</div>
 					</div>
-					<div class="field player-name">
-						<div>
-							<textarea name="attr_player_name"></textarea>
-							<label>Player<br />Name</label>
-						</div>
-					</div>
-					<div class="field experience-points">
-						<div>
-							<textarea name="attr_experience_points"></textarea>
-							<label>Experience<br />Points (XP)</label>
-						</div>
+					<div class="deity">
+						<label class="field">
+							<div class="contents">
+								<textarea name="attr_deity"></textarea>
+								<span class="label">Deity</span>
+							</div>
+						</label>
 					</div>
 				</div>
-				<div class="section section-2">
-					section 2
+				<div class="section 3 compact">
+					<div class="level">
+						level
+					</div>
+					<div class="hero-points">
+						hero points
+					</div>
 				</div>
-				<div class="section section-3">
-					section 3
+			</div>
+			<div class="row 2">
+				<div class="section 4">
+					<div class="fieldset ability-scores">
+						<h1>Ability Scores</h1>
+						<div class="contents">
+							<div class="strength">
+								<label class="modifier">
+									<span class="field" name="attr_strength_modifier"></span>
+									<span class="label">
+										<span class="abbr">Str</span>
+										<span class="sub-text">Modifier</span>
+									</span>
+								</label>
+								<label class="strength score">
+									<input type="number" class="field" name="attr_strength_score" value="0"/>
+									<span class="label">Strength<br /></span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="fieldset class-dc">
+						<h1>Class DC</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+				<div class="section 5">
+					<div class="fieldset armor-class">
+						<h1>Armor Class</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset saving-throws">
+						<h1>Saving Throws</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+				<div class="section 6 compact">
+					<div class="fieldset hit-points">
+						<h1>Hit Points</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset perception">
+						<h1>Perception</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="row row-2">
-				row2
+			<div class="row 3">
+				<div class="section 7">
+					<div class="fieldset speed">
+						<h1>Speed</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset melee-strikes">
+						<h1>Melee Strikes</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset ranged-strikes">
+						<h1>Ranged Strikes</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset weapon-proficiencies">
+						<h1>Weapon Proficiencies</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+				<div class="section 8">
+					<div class="fieldset skills">
+						<h1>Skills</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset languages">
+						<h1>Languages</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="row row-3">
-				row3
+		</div>
+		<div class="page 2">
+			<div class="row 1">
+				<div class="section 9">
+					<div class="fieldset ancestry-feats-and-abilities">
+						<h1>Ancestry Feats and Abilities</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset skill-feats">
+						<h1>Skill Feats</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset general-feats">
+						<h1>General Feats</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+				<div class="section 10">
+					<div class="fieldset class-feats-and-abilities">
+						<h1>Class Feats and Abilities</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset bonus-feats">
+						<h1>Bonus Feats</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row 2">
+				<div class="section 11">
+					<div class="fieldset inventory">
+						<h1>Inventory</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="page page-2">
-			page 2 content
+		<div class="page 3">
+			<div class="row 1">
+				<div class="section 12">
+					<div class="fieldset">
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row 2">
+				<div class="section 13">
+					<div class="fieldset campaign-notes">
+						<h1>Campaign Notes</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row 3">
+				<div class="section 14">
+					<div class="fieldset actions-and-activities">
+						<h1>Action and Activies</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row 4">
+				<div class="section 15">
+					<div class="fieldset free-actions-and-reactions">
+						<h1>Free Actions and Reactions</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="page page-3">
-			page 3 content
-		</div>
-		<div class="page page-4">
-			page 4 content
+		<div class="page 4">
+			<div class="row 1">
+				<div class="section 16">
+					<div class="fieldset spell-attack-roll">
+						<h1>Spell Attack Roll</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset spell-dc">
+						<h1>Spell DC</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+				<div class="section 17">
+					<div class="fieldset spell-slots-per-day">
+						<h1>Spell Slots Per Day</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row 2">
+				<div class="section 18">
+					<div class="fieldset magic-traditions">
+						<h1>Magic Traditions</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset cantrips">
+						<h1>Cantrips</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset innate-spells">
+						<h1>Innate Spells</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+					<div class="fieldset focus-spells">
+						<h1>Focus Spells</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+				<div class="section 19 spells">
+					<div class="fieldset spells">
+						<h1>Spells</h1>
+						<div class="contents">
+							contents
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-
-<script type="text/worker">
-    const menu_items = [ "1", "2", "3", "4" ];
-	
-    menu_items.forEach(menu_item => {
-        on(`clicked:${menu_item}`, function() {
-            setAttrs({
-                current_page: menu_item
-            });
-        });
-    });
-</script>
